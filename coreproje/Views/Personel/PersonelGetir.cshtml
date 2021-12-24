@@ -1,0 +1,40 @@
+﻿@using coreproje.Models
+@model List<Personel>
+
+@{
+    ViewData["Title"] = "PersonelGetir";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="w3-container">
+    <table class="table table-bordered" style="margin:15px;">
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Şehir</th>
+                <th>Departman</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+            <tr>
+                <td>@x.Ad</td>
+                <td>@x.Soyad</td>
+                <td>@x.Sehir</td>
+                <td>@x.departman.Ad</td>
+                <td><a href="/Personel/PersonelSil/?id=@x.Id" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Personel/PersonelBilgiGetir/?id=@x.Id" class="btn btn-success">Güncelle</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Personel/YeniPersonel" class="btn btn-dark">Yeni Personel Ekle</a>
+</div>
+
+

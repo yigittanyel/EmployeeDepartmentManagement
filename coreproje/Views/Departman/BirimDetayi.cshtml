@@ -1,0 +1,36 @@
+﻿@using coreproje.Models
+@model List<Personel>
+
+@{
+    ViewData["Title"] = "BirimDetayi";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<br />
+<h2>@ViewBag.brm Departmanı</h2>
+
+<div class="w3-container">
+    <table class="table table-bordered" style="margin:15px;">
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Şehir</th>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.Ad</td>
+                    <td>@x.Soyad</td>
+                    <td>@x.Sehir</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+

@@ -1,0 +1,34 @@
+﻿@using coreproje.Models
+@model List<Departman>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="w3-container">
+    <table class="table table-bordered" style="margin:15px;">
+        <thead>
+            <tr>
+                <th>Departman Adı</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+                <th>Detaylar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.Ad</td>
+                    <td><a href="/Departman/DepartmanSil/?id=@x.ID" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Departman/DepartmanGetir/?id=@x.ID@x.ID" class="btn btn-success">Güncelle</a></td>
+                    <td><a href="/Departman/BirimDetayi/@x.ID" class="btn btn-primary">Detaylar</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Departman/YeniDepartman" class="btn btn-dark">Yeni Departman Ekle</a>
+</div>
+

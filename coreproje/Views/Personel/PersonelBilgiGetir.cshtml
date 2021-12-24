@@ -1,0 +1,29 @@
+﻿@model coreproje.Models.Personel
+
+@{
+    ViewData["Title"] = "PersonelBilgiGetir";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+{
+    <div>
+        <label>Personel Ad: </label><br />
+        @Html.TextBoxFor(q => q.Ad, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Personel Soyad: </label><br />
+        @Html.TextBoxFor(q => q.Soyad, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Personel Şehir: </label><br />
+        @Html.TextBoxFor(q => q.Sehir, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Departman: </label><br />
+        @Html.TextBoxFor(q => q.departman.Ad, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px;">
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+}

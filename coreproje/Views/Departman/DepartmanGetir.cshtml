@@ -1,0 +1,22 @@
+﻿@model coreproje.Models.Departman
+
+@{
+    ViewData["Title"] = "DepartmanGetir";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+@using (Html.BeginForm("DepartmanGuncelle", "Departman", FormMethod.Post))
+{
+    <div>
+        <label>Departman ID: </label><br />
+        @Html.TextBoxFor(q => q.ID, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Departman Adı: </label><br />
+        @Html.TextBoxFor(q => q.Ad, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px;">
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+}
+
